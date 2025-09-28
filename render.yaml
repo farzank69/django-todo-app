@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: django-todo-app
+    name: todovia
     env: python
     plan: free
     autoDeploy: true
