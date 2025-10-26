@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo',
-    'widget_tweaks',
     "django.contrib.sites",     # it requires for allauth
     'allauth',
     'allauth.account',
