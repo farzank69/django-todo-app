@@ -22,6 +22,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')), 
     path('accounts/', include('allauth.urls')),
     path('', views.home, name='home'), 
-    path('', include('todo.urls')), 
+    path('', include('todo.urls')),
 ]
 
