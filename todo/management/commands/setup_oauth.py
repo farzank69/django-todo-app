@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.contrib.sites.models import Site
-from allauth.socialaccount.models import SocialApp, SocialAppSites
+from allauth.socialaccount.models import SocialApp
 from django.conf import settings
 import os
 
