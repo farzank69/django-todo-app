@@ -40,11 +40,10 @@ def send_email(request):
     return render(request, "todo/send_email.html")
 
 class CustomLoginView(LoginView):
-    template_name = 'todo/login.html'
+    template_name = 'registration/login.html'
 
 
 # Create your views here.
-@login_required
 def home(request):
     if request.user.is_authenticated:
         tasks = Task.objects.filter(user=request.user).order_by('completed', 'due_date')
@@ -62,7 +61,7 @@ def home(request):
         return render(request, 'home.html', {'tasks':tasks, 'form': form, 'today': date.today()})
     
     else:
-        return render(request, 'home.html', {'tasks': None})
+        return redirect('login')
 
 def custom_login(request):
     form = AuthenticationForm(request, data=request.POST or None)
