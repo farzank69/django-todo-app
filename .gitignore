@@ -7,11 +7,10 @@ __pycache__/
 venv/
 
 
-# Django migrations
+# Django migrations - only ignore cache files, NOT migration files
 */migrations/*.pyc
 */migrations/*.py[cod]
 */migrations/__pycache__/
-*/migrations/*.py
 
 # Database files
 db.sqlite3
