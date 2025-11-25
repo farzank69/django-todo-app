@@ -27,4 +27,4 @@ services:
       - key: SECRET_KEY
         sync: false
       - key: RENDER_EXTERNAL_HOSTNAME
-        value: todoapp-uzg8.onrender.com
+        value: listsync-8jxz.onrender.com

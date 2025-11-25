@@ -8,11 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .forms import TaskForm
 from django.contrib.auth.views import LoginView
-# views.py
 from django.core.mail import send_mail
 from django.http import JsonResponse
-from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 @csrf_exempt
 def send_email(request):
@@ -28,7 +27,7 @@ def send_email(request):
             send_mail(
                 subject=subject,
                 message=message,
-                from_email="your_email@gmail.com",   # Must match EMAIL_HOST_USER in settings.py
+                from_email=settings.EMAIL_HOST_USER,
                 recipient_list=[recipient],
                 fail_silently=False,
             )

@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'todoapp-uzg8.onrender.com', '.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'listsync-8jxz.onrender.com', '.onrender.com']
 
 
 # Application definition
@@ -156,6 +156,13 @@ EMAIL_USE_TLS = True       # for security tls should always be True
 EMAIL_PORT = 587            
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+# CSRF trusted origins for production
+CSRF_TRUSTED_ORIGINS = [
+    'https://listsync-8jxz.onrender.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
 
 # Logging configuration for production debugging
 LOGGING = {
