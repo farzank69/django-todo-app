@@ -34,15 +34,12 @@ def send_email(request):
             return JsonResponse({"success": "Email sent successfully!"})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
-
-    # 👇 If GET request, just render the form
     return render(request, "todo/send_email.html")
 
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'
 
 
-# Create your views here.
 def home(request):
     if request.user.is_authenticated:
         tasks = Task.objects.filter(user=request.user).order_by('completed', 'due_date')
